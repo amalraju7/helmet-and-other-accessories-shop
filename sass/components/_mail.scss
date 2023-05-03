@@ -1,0 +1,181 @@
+.section-mail {
+    color: #fff;
+    font: 300 14px/24px "Open Sans", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", Sans-Serif;
+    margin: 0px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: #574ca6;
+}
+  *,
+  *:before,
+  *:after {
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+.mail {
+  
+    position: relative;
+    height: 620px;
+    width: 700px;
+    display: flex;
+    justify-content: center;
+    background-color: #574ca6;
+    box-shadow: 2px 3px 6px 0 rgba(0,0,0,0.2);
+    overflow: hidden; 
+&__para{
+    font-size: 2rem;
+    padding: 10px;
+}
+&__circle, &__circle-outer {
+    position: absolute;
+    height: 300px;
+    width: 300px;
+    border: 5px solid #5776a8;
+    background-color: none;
+    top: 143px;
+    left: 200px;
+    border-radius: 50%;
+    z-index: 5;
+}
+&__circle-outer {
+    height: 290px;
+    width: 290px;
+    top: 148px;
+    left: 205px;
+    background-color: #5776a8;
+    z-index: 4;
+}
+
+    &__button {
+        position: absolute;
+        height: 70px;
+        width: 239px;
+        top: 540px;
+        border-radius: 25px;
+        background: white;
+        color: #83ab6a;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        z-index: 10;
+    }
+
+&__button:hover {
+    background: #83ab6a;
+    color: white;
+}
+&__icon {
+	position: absolute;
+	z-index: 2;
+	top: 130px;
+	left: 140px;
+	transform: translate3d(0,0,0);
+	fill: none;
+	stroke-width: 2px;
+	stroke: #ecf0f1;
+	stroke-linecap: square;
+    stroke-dasharray: 325 325;
+    z-index: 6;
+}
+#cb {
+	display: none;
+}
+#cb:checked ~ &__button {
+	animation: button 1.5s ease-in-out 1.7s;
+	animation-fill-mode: both;
+}
+#cb:checked ~ &__reset {
+	animation: reset 1s ease-in-out 3.7s;
+	animation-fill-mode: both;
+}
+#cb:checked ~ &__circle {
+	animation: circle 1s ease-in-out;
+	animation-fill-mode: both;
+}
+#cb:checked ~ &__circle-outer {
+	animation: circle 0.8s ease-in-out;
+    animation-fill-mode: both;
+    z-index: 5;
+}
+#cb:checked ~ &__mail {
+	stroke-dashoffset: 326;
+	transition: stroke-dashoffset 1s ease-in-out;
+}
+#cb:checked ~ &__plane {
+	stroke-dashoffset: 0;
+	transition: stroke-dashoffset 1s ease-in-out .6s;
+	animation: fly 2.4s ease-in-out;
+	animation-fill-mode: both;
+}
+@keyframes circle {
+    0% { transform: scale(1);}
+    20% { transform: scale(1.2);}
+    100% { transform: scale(0);}
+}
+@keyframes fly {
+	0%, 50% {
+		transform: translate3d(0,0,0) scale(1);
+	}
+	60% {
+		transform: translate3d(-10px,5px,0) scale(1.05);
+	}
+	70% {
+		opacity: 1;
+	}
+	85% {
+		opacity: 0;
+	}
+	100% {
+		transform: translate3d(150px,-150px,0) scale(0.4);
+		opacity: 0;
+	}
+}
+@keyframes button {
+    0%, 30% { transform: scale(1);
+        color: white;
+        background-color: #83ab6a;
+    }
+    50% { color: #83ab6a;
+            width: 50px;
+        transform: scale(1);
+        background-color: #83ab6a;
+    }
+    100% { transform: scale(0);
+            width: 50px;
+            color: #83ab6a;
+            background-color: #83ab6a;
+    }
+}
+&__reset {
+    opacity: 0;
+    z-index: 5;
+}
+@keyframes reset {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+&__mail {
+    position: absolute;
+    left: 336px;
+    top: 276px;
+    stroke-dashoffset: 0;
+    transform: scale(1.5);
+}
+&__plane {
+    position: absolute;
+    left: 320px;
+    top: 240px;
+    stroke-dashoffset: 325;
+    transform: scale(1.5);
+}
+}

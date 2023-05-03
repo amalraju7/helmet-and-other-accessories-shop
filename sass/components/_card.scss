@@ -1,0 +1,178 @@
+.card{
+    display: grid;
+    color: black;
+    perspective: 180rem;
+    -moz-perspective: 180rem;
+    &--account{
+        grid-row: 2/2;
+    }
+
+    &__side{
+        grid-row: 1;
+        grid-column: 1;
+        transition: all 1s ease;
+     
+        backface-visibility: hidden;
+        border-radius: 5px;
+        box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
+        &--front{
+            &-1{
+                background: url(../img/mt.jpg) white;
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
+                clip-path: polygon(100% 0%, 100% 100%, 0% 100%, 0% 23%, 23% 0%);
+            }
+            &-2{
+                background: url(../img/agv2.jpg);
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+            &-3{
+                background: url(../img/muc.jpg) white ;
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+            &-4{
+                background: url(../img/al.png) white;
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
+                clip-path: polygon(0% 0%, 0% 100%, 100% 100%, 100% 23%, 77% 0%);
+               
+            }
+            &-5{
+                background: url(../img/arai.svg) white;
+                background-size: contain;
+                background-repeat: no-repeat;
+                clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 23% 100%, 0% 77%);
+            }
+            &-6{
+                background: url(../img/dan.png) white;
+
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+            &-7{
+                background: url(../img/shark.png) white;
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+            &-8{
+                background: url(../img/caberg.png) white ;
+                background-size: contain;
+                background-repeat: no-repeat;
+                clip-path: polygon(0% 0%, 0% 100%, 77% 100%, 100% 77%, 100% 0%);
+                background-position: center;
+            }
+            &-9{
+                background-color: #007FFF;
+            }
+            &-10{
+                background-color: #007FFF;
+            }
+            &-11{
+                background-color: #007FFF;
+          
+            }
+            &-12{
+                background-color: #007FFF;
+             
+          
+               
+            }
+            &-13{
+                background-image: url("../img/bac.jpg");
+                background-size: contain;
+                color: white;
+                text-align: center;
+                padding: 10px;
+          
+                
+            }
+            &-14{
+                background-color: #007FFF;
+             
+          
+               
+            }
+            &-15{
+                background-color: #007FFF;
+             
+          
+               
+            }
+        }
+        &--back{
+            transform: rotateY(180deg);
+            
+            &-1 {
+                background-image: linear-gradient(to right bottom, $color-card1-light, $color-card1-dark);
+                clip-path: polygon(100% 0%, 100% 100%, 0% 100%, 0% 23%, 23% 0%);
+            }
+
+            &-2 {
+                background-image: linear-gradient(to right bottom, $color-card2-light, $color-card2-dark);
+            }
+
+            &-3 {
+                background-image: linear-gradient(to right bottom, $color-card3-light, $color-card3-dark);
+            }
+            &-4 {
+                background-image: linear-gradient(to right bottom, $color-card4-light, $color-card4-dark);
+                clip-path: polygon(0% 0%, 0% 100%, 100% 100%, 100% 23%, 77% 0%);
+            }
+
+            &-5 {
+                background-image: linear-gradient(to right bottom, $color-card5-light, $color-card5-dark);
+                clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 23% 100%, 0% 77%);
+            }
+
+            &-6 {
+                background-image: linear-gradient(to right bottom, $color-card6-light, $color-card6-dark);
+            }
+            &-7 {
+                background-image: linear-gradient(to right bottom, $color-card7-light, $color-card7-dark);
+            }
+
+            &-8 {
+                background-image: linear-gradient(to right bottom, $color-card8-light, $color-card8-dark);
+                clip-path: polygon(0% 0%, 0% 100%, 77% 100%, 100% 77%, 100% 0%);
+            }
+
+            
+            &-9 {
+              
+                background-image: linear-gradient(to right bottom, $color-card5-light, $color-card5-dark);
+               
+            }
+
+            &-10 {
+  
+                background-image: linear-gradient(to right bottom, $color-card6-light, $color-card6-dark);
+            }
+            &-11 {
+            
+                background-image: linear-gradient(to right bottom, $color-card7-light, $color-card7-dark);
+            }
+
+            &-12 {
+
+                background-image: linear-gradient(to right bottom, $color-card8-light, $color-card8-dark);
+            
+            }
+
+        }
+    }
+
+
+    &:hover &__side--front{
+        transform: rotateY(-180deg);
+    }
+    &:hover &__side--back{
+        transform: rotateY(0);
+    }
+}
